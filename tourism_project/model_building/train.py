@@ -20,6 +20,9 @@ Xtest  = pd.read_csv("Xtest.csv")
 ytrain = pd.read_csv("ytrain.csv").squeeze()
 ytest  = pd.read_csv("ytest.csv").squeeze()
 
+Xtrain['Gender'] = Xtrain['Gender'].map({'Female': 0, 'Male': 1})
+Xtest['Gender'] = Xtest['Gender'].map({'Female': 0, 'Male': 1})
+
 # One-hot encode 'Type' and scale numeric features
 numeric_features = ["Age", "Gender","CityTier","NumberOfPersonVisiting","PreferredPropertyStar",
                     "NumberOfTrips","Passport","OwnCar","NumberOfChildrenVisiting","MonthlyIncome",
